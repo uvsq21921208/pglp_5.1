@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class PersonnelDao extends Dao<Personnel>{
+public class GroupeDao extends Dao<CompositePersonnel> {
 
 	@Override
-	public Personnel create(Personnel obj) {
-	      try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(obj.getNom()))) {
+	public CompositePersonnel create(CompositePersonnel obj) {
+	      try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Groupe"+obj.getID()))) {
 	            out.writeObject(obj);
 	        }
 	        catch(IOException ioe){
@@ -21,10 +21,10 @@ public class PersonnelDao extends Dao<Personnel>{
 	}
 
 	@Override
-	public Personnel find(String id) {
-		Personnel personnel = null;
+	public CompositePersonnel find(String id) {
+		CompositePersonnel groupe = null;
 		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(id))) {
-            personnel = (Personnel) in.readObject();
+            groupe = (CompositePersonnel) in.readObject();
         }
         catch(ClassNotFoundException  ioe){
         } catch (FileNotFoundException e) {
@@ -34,12 +34,12 @@ public class PersonnelDao extends Dao<Personnel>{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return personnel;
+        return groupe;
 	}
 
 	@Override
-	public Personnel update(Personnel obj) {
-		 String file = obj.getNom();
+	public CompositePersonnel update(CompositePersonnel obj) {
+		 String file = "Groupe"+obj.getID();
 	     try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file, false))) {
 	            out.writeObject(obj);
 	       }
@@ -49,9 +49,9 @@ public class PersonnelDao extends Dao<Personnel>{
 	}
 
 	@Override
-	public void delete(Personnel obj) {
+	public void delete(CompositePersonnel obj) {
 		
-	     File file = new File(obj.getNom());
+	     File file = new File("Groupe"+obj.getID());
 	     file.delete();
 	      
 	}

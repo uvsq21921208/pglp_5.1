@@ -1,6 +1,6 @@
 package uvsq.pglp_5_1;
 
-public abstract class DAO<T> {
+public abstract class Dao<T> {
     
     public abstract T create(T obj);
     public abstract T find(String id);

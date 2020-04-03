@@ -67,7 +67,6 @@ public class SerializableTest {
 	       
 	         ObjectInputStream in = new ObjectInputStream(fileIn);
              Annuaire b = (Annuaire) in.readObject();
-            
              TypePersonnelIterator iter1 =  a.getIterator();
      	     TypePersonnelIterator iter2 =  b.getIterator();
             

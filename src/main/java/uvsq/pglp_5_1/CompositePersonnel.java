@@ -83,8 +83,18 @@ public class CompositePersonnel  extends TypePersonnel implements
        /**
        *  @return string representation of the object.
        */
-       public String getID() {
-              String str = "id " + this.id;
-              return str;
+       public int getID() {
+              return this.id;
+       }
+       @Override
+       public boolean equals(Object other) {
+    	
+    	   if(other == null) return false;
+    	   if(other == this) return true;
+    	   if (!(other instanceof CompositePersonnel )) return false;
+    	   CompositePersonnel otherCompositePersonnel = (CompositePersonnel)other;
+    	   System.out.println(otherCompositePersonnel.getID() == this.id);
+    	   return (otherCompositePersonnel.getID() == this.id); 
+
        }
 }

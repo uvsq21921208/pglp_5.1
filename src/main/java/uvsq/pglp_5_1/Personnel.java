@@ -155,5 +155,20 @@ public final class Personnel extends TypePersonnel implements Serializable {
 
    return false;
    }
-    
+   
+   
+   @Override
+   public boolean equals(Object other) {
+	
+	   if(other == null) return false;
+	   if(other == this) return true;
+	   if (!(other instanceof Personnel )) return false;
+	   Personnel otherPersonnel = (Personnel)other;
+	   return otherPersonnel.getNom().equals(this.nom) 
+			  && otherPersonnel.getPrenom().equals(this.prenom)
+			  && otherPersonnel.getFonction().equals(this.fonction);
+	   
+	  
+	   
+   }
 }

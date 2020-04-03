@@ -12,3 +12,5 @@ public abstract class TypePersonnel {
  */
 public abstract boolean isGroupe();
 }
+
+

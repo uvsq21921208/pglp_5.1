@@ -8,11 +8,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class PersonnelDao extends Dao<Personnel>{
+public class AnnuaireDao extends Dao<Annuaire> {
+
 
 	@Override
-	public Personnel create(Personnel obj) {
-	      try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(obj.getNom()))) {
+	public Annuaire create(Annuaire obj) {
+	      try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Annuaire"))) {
 	            out.writeObject(obj);
 	        }
 	        catch(IOException ioe){
@@ -21,10 +22,10 @@ public class PersonnelDao extends Dao<Personnel>{
 	}
 
 	@Override
-	public Personnel find(String id) {
-		Personnel personnel = null;
+	public Annuaire find(String id) {
+		Annuaire annuaire = null;
 		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(id))) {
-            personnel = (Personnel) in.readObject();
+            annuaire = (Annuaire) in.readObject();
         }
         catch(ClassNotFoundException  ioe){
         } catch (FileNotFoundException e) {
@@ -34,12 +35,12 @@ public class PersonnelDao extends Dao<Personnel>{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return personnel;
+        return annuaire;
 	}
 
 	@Override
-	public Personnel update(Personnel obj) {
-		 String file = obj.getNom();
+	public Annuaire update(Annuaire obj) {
+		 String file = "Annuaire";
 	     try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file, false))) {
 	            out.writeObject(obj);
 	       }
@@ -49,9 +50,9 @@ public class PersonnelDao extends Dao<Personnel>{
 	}
 
 	@Override
-	public void delete(Personnel obj) {
+	public void delete(Annuaire obj) {
 		
-	     File file = new File(obj.getNom());
+	     File file = new File("Annuaire");
 	     file.delete();
 	      
 	}

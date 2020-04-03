@@ -31,10 +31,12 @@ public class Annuaire implements Serializable{
 	public void addGroupe(CompositePersonnel  c) {
       head.add(c);
 	}
-	
+	public void removeGroupe(CompositePersonnel  c) {
+	      head.remove(c);
+   }
 	public GroupeIteration getIterator(){
 		return ANNUAIRE.head.groupeIteration();
 	}
 
-
+  
 }

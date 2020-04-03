@@ -10,12 +10,12 @@ import org.junit.Test;
 public class PersonnelDaoTest {
 	
 	
-	DAO<Personnel> dao;
+	Dao<Personnel> dao;
 	@Test
 	public void createTest(){
 		File tmpDir = new File("Djekhaba");
 		tmpDir.delete();
-		dao = DaoFactory.getPersonnelDao();
+		dao = new PersonnelDao();
 		Personnel p1 = new Personnel.PersonelBuilder("Djekhaba", "Mouttie", "CS").build();
 		assertFalse(tmpDir.exists());
 		dao.create(p1);
@@ -26,7 +26,7 @@ public class PersonnelDaoTest {
     
 	@Test
 	public void updateTest(){
-		dao = DaoFactory.getPersonnelDao();
+		dao = new PersonnelDao();
 		createTest();
 		File tmpDir = new File("Djekhaba");
 		Personnel p1 = dao.find("Djekhaba");
@@ -43,7 +43,7 @@ public class PersonnelDaoTest {
 	@Test
 	public void deleteTest(){
 		File tmpDir = new File("Djekhaba");
-		dao = DaoFactory.getPersonnelDao();
+		dao = new PersonnelDao();
 		Personnel p1 = new Personnel.PersonelBuilder("Djekhaba", "Mouttie", "CS").build();
 		dao.create(p1);
 		assertTrue(tmpDir.exists());
