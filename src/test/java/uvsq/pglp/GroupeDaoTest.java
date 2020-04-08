@@ -1,4 +1,4 @@
-package uvsq.pglp_5_1;
+package uvsq.pglp;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+
+import uvsq.pglp.CompositePersonnel;
+import uvsq.pglp.GroupeDao;
+import uvsq.pglp.Personnel;
 
 public class GroupeDaoTest {
 	

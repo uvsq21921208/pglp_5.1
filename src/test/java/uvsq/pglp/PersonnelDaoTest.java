@@ -1,4 +1,4 @@
-package uvsq.pglp_5_1;
+package uvsq.pglp;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -6,6 +6,9 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 
 import org.junit.Test;
+
+import uvsq.pglp.Personnel;
+import uvsq.pglp.PersonnelDao;
 
 public class PersonnelDaoTest {
 	

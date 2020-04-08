@@ -1,4 +1,4 @@
-package uvsq.pglp_5_1;
+package uvsq.pglp;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -14,8 +14,11 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import uvsq.pglp_5_1.TypePersonnelIterator;
-import uvsq.pglp_5_1.Personnel;
+import uvsq.pglp.Annuaire;
+import uvsq.pglp.CompositePersonnel;
+import uvsq.pglp.Personnel;
+import uvsq.pglp.TypePersonnel;
+import uvsq.pglp.TypePersonnelIterator;
 
 public class SerializableTest {
 
